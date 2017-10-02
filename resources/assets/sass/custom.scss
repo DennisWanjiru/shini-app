@@ -1,0 +1,13 @@
+.navbar-fixed {
+	z-index: 999;
+
+	nav {
+		background: $primary-color;
+	}
+	@media (min-width: $desktop) {
+		.nav-wrapper {
+			margin: auto 60px
+		}
+	}
+	
+}

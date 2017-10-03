@@ -3,8 +3,11 @@
 <head>
 	@include('partials._styles')
 </head>
-<body>
-	@yield('content')
+<body class="auth">
+
+	<main class="m-t-50">
+		@yield('content')
+	</main>	
 
 	@include('partials._scripts')	
 </body>

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/app.css">        
        
     </head>
-    <body>
+    <body style="background-color: #fff;">
         <header>
             <div class="navbar-fixed">
                 <nav>
@@ -74,6 +74,35 @@
                 </nav>
             </div>
         </header>
+
+        <main>
+            <div class="container">
+                <div class="row">
+                            <div class="col m6 input-field">
+                                <input id="first_name" type="text" class="validate">
+                                <label for="firstname">First Name</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" class="validate">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                This is an inline input field:
+                                <div class="input-field inline">
+                                    <i class="material-icons prefix">mail</i>
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </main>
 
         <script src="js/jquery/jquery.min.js"></script>
         <script src="js/materialize.min.js"></script>

@@ -3,96 +3,72 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col m4 s12 offset-m4">
-            <div class="card white">
-                <div class="card-content white-text">
-                    <span class="card-title">Card Title</span>
+        <div class="col m6 s12 offset-m3">
+            <div class="card white card-auth">
 
-                    <div class="row">
-                        <form class="col s12">
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input id="email" type="email" class="validate">
-                              <label for="email">Email</label>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                </div>
-                <div class="card-action">
-                    <a href="#">This is a link</a>
+                <div class="card-container">
+                    <div class="card-content custom-text">
+                        <span class="card-title center-align"><a href="{{ url('/') }}">Shini</a></span>
+
+                        <div class="card-tabs custom-text m-b-15">
+                            <ul class="tabs tabs-fixed-width tabs-yellow">
+                                <li class="tab"><a href="{{ route('login') }}">Sign in</a></li>
+                                <li class="tab"><a class="active" href="{{ route('register') }}">Sign up</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="row">
+                            <form class="col s12" method="POST" action="{{ route('register') }}">
+                                {{ csrf_field() }}
+
+                                <div class="row">
+                                    <div class="input-field{{ $errors->has('name') ? ' has-error' : '' }} col s12 black-text">
+                                        <input id="name" name="name" type="text" class="validate" value="{{ old('name') }}" required>
+                                        <label for="name">Name</label>
+
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                
+                                    <div class="input-field{{ $errors->has('email') ? ' has-error' : '' }} col s12 black-text">
+                                        <input id="email" name="email" type="email" class="validate" value="{{ old('email') }}" required>
+                                        <label for="email">Email</label>
+
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                            
+                                    <div class="input-field{{ $errors->has('password') ? ' has-error' : '' }} col s12 black-text">
+                                        <input id="password" name="password" type="password" class="validate" required>
+                                        <label for="password">Password</label>
+
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                
+                                    <div class="input-field col s12 black-text">
+                                      <input id="password-confirm" name="password_confirmation" type="password" class="validate" required>
+                                      <label for="password-confirm">Confirm Password</label>
+                                    </div>
+                                
+                                    <div class="col s12">
+                                        <button type="submit" class="waves-effect waves-light btn-large btn-block btn-primary">Sign up</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>                
                 </div>
             </div>
-
-
-        
-           {{--  <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> --}}
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="navbar-fixed">
+<div class="navbar-fixed z-depth-3">
     <nav>
         <div class="nav-wrapper">
             <a href="#" data-activates="mobile-menu" class="brand-logo">Shini</a>

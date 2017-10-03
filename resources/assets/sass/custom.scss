@@ -4,10 +4,44 @@
 	nav {
 		background: $primary-color;
 	}
-	@media (min-width: $desktop) {
-		.nav-wrapper {
-			margin: auto 60px
+	
+}
+
+.auth {
+	background: $primary-color;
+}
+
+.custom-text {
+	color: $primary-color;
+}
+
+@media (min-width: 1200px) {
+	.nav-wrapper {
+		margin: auto 60px
+	}
+
+	.card-auth {
+		margin: auto 53px;
+
+		.card-container {
+			margin: auto 15px;
+		}
+
+		.card-title {
+			font-size: 34px;
 		}
 	}
-	
+}
+
+//Buttons
+.btn-block {
+	width: 100%;
+}
+
+.btn-primary {
+	background: $primary-color;
+
+	&:hover {
+		background: lighten($primary-color, 10%);
+	}
 }
